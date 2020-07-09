@@ -1,8 +1,16 @@
 package com.yws.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
+	
+	@Value(value = "#{20-2}")
 	private int age;
+	@Value(value = "张三")
 	private String name;
+	@Value(value = "${person.nickName}")
+	private String nickName;
+	
 	
 	public Person() {
 	}
@@ -27,9 +35,17 @@ public class Person {
 		this.name = name;
 	}
 
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
 	@Override
 	public String toString() {
-		return "Person [age=" + age + ", name=" + name + "]";
+		return "Person [age=" + age + ", name=" + name + ", nickName=" + nickName + "]";
 	}
 
 	@Override
@@ -38,6 +54,7 @@ public class Person {
 		int result = 1;
 		result = prime * result + age;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((nickName == null) ? 0 : nickName.hashCode());
 		return result;
 	}
 
@@ -57,8 +74,15 @@ public class Person {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (nickName == null) {
+			if (other.nickName != null)
+				return false;
+		} else if (!nickName.equals(other.nickName))
+			return false;
 		return true;
 	}
+
+
 	
 	
 	
