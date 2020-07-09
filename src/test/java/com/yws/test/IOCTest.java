@@ -1,10 +1,11 @@
 package com.yws.test;
 
+import java.util.Map;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.yws.bean.Color;
 import com.yws.bean.Person;
 import com.yws.config.MyConfig;
 import com.yws.config.MyConfig2;
@@ -21,6 +22,22 @@ public class IOCTest {
 			System.out.println(bean);
 		}
 		
+	}
+	
+	@Test
+	public void test02() {
+		 ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig2.class);
+		 
+		 Map<String, Person> beansOfType = context.getBeansOfType(Person.class);
+		 System.out.println(beansOfType);
+		 
+		 System.out.println("---------------");
+		 
+		 String[] namesForType = context.getBeanNamesForType(Person.class);
+		 for (String name : namesForType) {
+			 System.out.println(name);
+		 }
+		 
 	}
 	
 	
