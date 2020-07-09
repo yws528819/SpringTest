@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 public class LinuxCondition implements Condition{
 
 	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-		//1.能获取到ioc使用的beanFactory
+		//1.鑳借幏鍙栧埌ioc浣跨敤鐨刡eanFactory
 		context.getBeanFactory();
 		
-		//2.获取类加载器
+		//2.鑾峰彇绫诲姞杞藉櫒
 		ClassLoader classLoader = context.getClassLoader();
 
-		//3.获取当前环境信息
+		//3.鑾峰彇褰撳墠鐜淇℃伅
 		context.getEnvironment();
 		
-		//4.获取bean定义的注册类
+		//4.鑾峰彇bean瀹氫箟鐨勬敞鍐岀被
 		BeanDefinitionRegistry registry = context.getRegistry();
 		
 		String osName = context.getEnvironment().getProperty("os.name");

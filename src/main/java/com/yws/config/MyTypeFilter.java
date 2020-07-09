@@ -13,30 +13,26 @@ import org.springframework.core.type.filter.TypeFilter;
 public class MyTypeFilter implements TypeFilter {
 
 	/**
-	 * metadataReader£º ¶ÁÈ¡µ½µÄµ±Ç°ÕıÔÚÉ¨ÃèµÄÀàĞÅÏ¢
-	 * metadataReaderFactory£º ¿ÉÒÔ»ñÈ¡µ½ÆäËûÈÎºÎÀàĞÅÏ¢µÄ
+	 * metadataReaderï¿½ï¿½ ï¿½ï¿½È¡ï¿½ï¿½ï¿½Äµï¿½Ç°ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+	 * metadataReaderFactoryï¿½ï¿½ ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
 	 * 
 	 */
 	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
 			throws IOException {
-		//»ñÈ¡µ±Ç°Àà×¢½âĞÅÏ¢
+		//è·å–å½“å‰ç±»æ³¨è§£ä¿¡æ¯
 		AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
-		//»ñÈ¡µ±Ç°ÕıÔÚÉ¨ÃèµÄÀàµÄÀàĞÅÏ¢
+		//è·å–å½“å‰æ­£åœ¨æ‰«æçš„ç±»çš„ç±»ä¿¡æ¯
 		ClassMetadata classMetadata = metadataReader.getClassMetadata();
-		//»ñÈ¡µ±Ç°Àà×ÊÔ´£¨ÀàµÄÂ·¾¶£©
+		//è·å–å½“å‰ç±»èµ„æºï¼ˆç±»çš„è·¯å¾„ï¼‰
 		Resource resource = metadataReader.getResource();
 		
 		
 		/*
-		 * ´òÓ¡ÄÚÈİÈçÏÂ£º
+		 * æ‰“å°å†…å®¹å¦‚ä¸‹ï¼š
 		 *  ---:org.springframework.stereotype.Controller
 		 *  ---:org.springframework.stereotype.Repository
 		 *	---:org.springframework.stereotype.Service
 		 */
-//		Set<String> types = annotationMetadata.getAnnotationTypes();
-//		for(String type : types) {
-//			System.out.println("---:"+type);
-//		}
 		
 		
 		String className = classMetadata.getClassName();

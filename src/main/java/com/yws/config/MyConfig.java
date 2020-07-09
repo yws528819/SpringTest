@@ -15,25 +15,25 @@ import com.yws.dao.BookDao;
 
 @Configuration
 //@ComponentScan(value = "com.yws", excludeFilters = {
-//		@Filter(type = FilterType.ANNOTATION, classes = {
-//				Controller.class,Service.class
-//		})
+//@Filter(type = FilterType.ANNOTATION, classes = {
+//		Controller.class,Service.class
+//})
 //})
 
 //@ComponentScan(value = "com.yws", includeFilters = {
-//		@Filter(type = FilterType.ANNOTATION, classes = {
-//				Controller.class,Service.class
-//		})
+//@Filter(type = FilterType.ANNOTATION, classes = {
+//		Controller.class,Service.class
+//})
 //}, useDefaultFilters = false)
 
-//ComponentScan value:Ö¸¶¨ÒªÉ¨ÃèµÄ°ü
-//excludeFilters = Filter[], Ö¸¶¨É¨ÃèµÄÊ±ºò°´ÕÕÊ²Ã´¹æÔòÅÅ³ıÄÄĞ©×é¼ş
-//includeFilters = Filter[], Ö¸¶¨É¨ÃèµÄÊ±ºòÖ»Ğè°üº¬ÄÄĞ©×é¼ş
-//		FilterType.ANNOTATION °´ÕÕ×¢½â
-//		FilterType.ASSIGNABLE_TYPE °´ÕÕ¸ø¶¨µÄÀàĞÍ
-//		FilterType.ASPECTJ Ê¹ÓÃASPECTJ±í´ïÊ½
-//		FilterType.REGEX Ê¹ÓÃÕıÔò±í´ïÊ½
-//		FilterType.CUSTOM Ê¹ÓÃ×Ô¶¨Òå¹æÔò
+//ComponentScan value:æŒ‡å®šè¦æ‰«æçš„åŒ…
+//excludeFilters = Filter[], æŒ‡å®šæ‰«æçš„æ—¶å€™æŒ‰ç…§ä»€ä¹ˆè§„åˆ™æ’é™¤å“ªäº›ç»„ä»¶
+//includeFilters = Filter[], æŒ‡å®šæ‰«æçš„æ—¶å€™åªéœ€åŒ…å«å“ªäº›ç»„ä»¶
+//FilterType.ANNOTATION æŒ‰ç…§æ³¨è§£
+//FilterType.ASSIGNABLE_TYPE æŒ‰ç…§ç»™å®šçš„ç±»å‹
+//FilterType.ASPECTJ ä½¿ç”¨ASPECTJè¡¨è¾¾å¼
+//FilterType.REGEX ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼
+//FilterType.CUSTOM ä½¿ç”¨è‡ªå®šä¹‰è§„åˆ™
 @ComponentScans(value = {
 		@ComponentScan(value = "com.yws", includeFilters = {
 //				@Filter(type = FilterType.ANNOTATION, classes = {
