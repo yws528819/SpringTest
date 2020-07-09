@@ -13,8 +13,8 @@ import org.springframework.core.type.filter.TypeFilter;
 public class MyTypeFilter implements TypeFilter {
 
 	/**
-	 * metadataReader�� ��ȡ���ĵ�ǰ����ɨ�������Ϣ
-	 * metadataReaderFactory�� ���Ի�ȡ�������κ�����Ϣ��
+	 * metadataReader： 读取到的当前正在扫描的类信息
+	 * metadataReaderFactory： 可以获取到其他任何类信息的
 	 * 
 	 */
 	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
