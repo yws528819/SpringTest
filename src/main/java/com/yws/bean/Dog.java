@@ -3,9 +3,16 @@ package com.yws.bean;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 @Component
-public class Dog {
+public class Dog implements ApplicationContextAware{
+	
+	private ApplicationContext context;
+	
+	
 	public Dog() {
 		System.out.println("Dog construct...");
 	}
@@ -18,5 +25,10 @@ public class Dog {
 	@PreDestroy
 	public void destroy() {
 		System.out.println("dog destroy ...");
+	}
+
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		this.context = applicationContext;
+		
 	}
 }
