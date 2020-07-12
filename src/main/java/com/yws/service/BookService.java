@@ -14,7 +14,7 @@ public class BookService {
 	@Qualifier("bookDao")
 	@Autowired(required = false)
 	//@Resource
-	@Inject
+	//@Inject
 	private BookDao bookDao2;
 
 	public BookDao getBookDao() {
