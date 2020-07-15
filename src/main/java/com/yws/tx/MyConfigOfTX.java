@@ -6,9 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+@EnableTransactionManagement
 @ComponentScan("com.yws.tx")
 @Configuration
 public class MyConfigOfTX {
@@ -25,5 +29,10 @@ public class MyConfigOfTX {
 	@Bean
 	public JdbcTemplate jdbcTemplate(DataSource ds) {
 		return new JdbcTemplate(ds);
+	}
+	
+	@Bean
+	public PlatformTransactionManager platformTransactionManager(DataSource ds) {
+		return new DataSourceTransactionManager(ds);
 	}
 }
