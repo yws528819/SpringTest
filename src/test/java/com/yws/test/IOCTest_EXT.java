@@ -12,9 +12,15 @@ public class IOCTest_EXT {
 	public void test1() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfigExt.class);
 
-		context.publishEvent(new ApplicationEvent(new String("我发布了事件")) {
+     	context.publishEvent(new ApplicationEvent(new String("我发布了事件")) {
 		});
 		
+		context.close();
+	}
+	
+	@Test
+	public void test2() {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfigExt.class);
 		context.close();
 	}
 }
