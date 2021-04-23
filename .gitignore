@@ -1,1 +1,10 @@
+# Eclipse #
+.settings/
+.classpath
+bin/
+.class
+.metadata/
+*.log
+/Servers/
+/build/
 target/
